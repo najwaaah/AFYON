@@ -1,0 +1,65 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Services</h1>
+              <p class="mb-0">At Afyon, we specialize in creating high-quality solid surfaces for both residential and commercial spaces. From custom fabrication and seamless installations to expert repairs and maintenance, our team ensures durable and stylish solutions tailored to your needs. Let us help you transform your space with elegance and precision.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="{% url "index" %}">Home</a></li>
+            <li class="{% url "services" %}">Services</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses section">
+
+      <div class="container">
+
+        <div class="row">
+         {% for i in service %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="course-item">
+              <img src="{{i.image.url}}" class="img-fluid" alt="...">
+              <div class="course-content">
+               
+
+                <h3>{{i.name}}</h3>
+               
+              
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+                 
+          {% endfor %}
+        </div>
+
+      </div>
+
+    </section><!-- /Courses Section -->
+
+  </main>
+
+  
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+ {% endblock %}
